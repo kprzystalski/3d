@@ -10,25 +10,23 @@
 
 #include "Application/utils.h"
 
-void SimpleShapeApplication::init()
-{
+void SimpleShapeApplication::init() {
     // A utility function that reads the shader sources, compiles them and creates the program object
     // As everything in OpenGL we reference program by an integer "handle".
     auto program = xe::utils::create_program(
-        {{GL_VERTEX_SHADER, std::string(PROJECT_DIR) + "/shaders/base_vs.glsl"},
-         {GL_FRAGMENT_SHADER, std::string(PROJECT_DIR) + "/shaders/base_fs.glsl"}});
+            {{GL_VERTEX_SHADER,   std::string(PROJECT_DIR) + "/shaders/base_vs.glsl"},
+             {GL_FRAGMENT_SHADER, std::string(PROJECT_DIR) + "/shaders/base_fs.glsl"}});
 
-    if (!program)
-    {
+    if (!program) {
         std::cerr << "Invalid program" << std::endl;
         exit(-1);
     }
 
     // A vector containing the x,y,z vertex coordinates for the triangle.
     std::vector<GLfloat> vertices = {
-        -0.5f, 0.0f, 0.0f,
-        0.5f, 0.0f, 0.0f,
-        0.0f, 0.5f, 0.0f};
+            -0.5f, 0.0f, 0.0f,
+            0.5f, 0.0f, 0.0f,
+            0.0f, 0.5f, 0.0f};
 
     // Generating the buffer and loading the vertex data into it.
     GLuint v_buffer_handle;
@@ -57,15 +55,14 @@ void SimpleShapeApplication::init()
     glClearColor(0.81f, 0.81f, 0.8f, 1.0f);
 
     // This setups an OpenGL vieport of the size of the whole rendering window.
-    auto [w, h] = frame_buffer_size();
+    auto[w, h] = frame_buffer_size();
     glViewport(0, 0, w, h);
 
     glUseProgram(program);
 }
 
 //This functions is called every frame and does the actual rendering.
-void SimpleShapeApplication::frame()
-{
+void SimpleShapeApplication::frame() {
     // Binding the VAO will setup all the required vertex buffers.
     glBindVertexArray(vao_);
     glDrawArrays(GL_TRIANGLES, 0, 3);

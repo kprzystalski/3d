@@ -47,4 +47,4 @@ namespace xe
     {                                                               \
         call;                                                       \
         xe::utils::get_and_report_error(#call, __FILE__, __LINE__); \
-    }\
+    }

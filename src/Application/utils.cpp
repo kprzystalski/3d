@@ -98,8 +98,9 @@ namespace xe {
                 if (line_number >= 0) {
                     std::cerr << ":" << line_number;
                 }
+
+                std::cerr << std::endl;
             }
-            std::cerr << std::endl;
             return 0;
         }
 
@@ -178,6 +179,9 @@ namespace xe {
                 return 0;
             }
 
+            if (shader_source.size() == 0) return 0;
+
+
             glShaderSource(shader, shader_source.size(), shader_source.data(), nullptr);
 
             glCompileShader(shader);
@@ -202,6 +206,8 @@ namespace xe {
             source_t shader_source;
             shader_source.load(path);
 
+            if (shader_source.size() == 0)
+                return 0;
 #ifdef __APPLE__
             shader_source.replace_version("410");
 #endif
