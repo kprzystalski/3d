@@ -4,7 +4,7 @@
 
 #include "obj_reader.h"
 
-#define SPDLOG_ACTIVE_LEVEL SPDLOG_LEVEL_DEBUG
+#include <tuple>
 
 #include "spdlog/spdlog.h"
 #include "glm/glm.hpp"
@@ -53,7 +53,7 @@ namespace {
 
     void push_sub_mesh(xe::sMesh &s_mesh, const xe::sMesh::SubMesh sub_mesh) {
         if (sub_mesh.end > sub_mesh.start) {
-            SPDLOG_DEBUG("Pushing submesh {:4d} {:4d}", sub_mesh.start, sub_mesh.end);
+            spdlog::debug("Pushing submesh {:4d} {:4d}", sub_mesh.start, sub_mesh.end);
             s_mesh.submeshes.push_back(sub_mesh);
         }
     }
@@ -69,19 +69,18 @@ namespace {
         mesh.has_texcoords[0] = !attrib.texcoords.empty();
 
         int index = 0;
-        int fce = 0;
 
         auto mat_idx = -1;
         xe::sMesh::SubMesh sub_mesh;
-        sub_mesh.start = fce;
+        sub_mesh.start = index;
         sub_mesh.mat_idx = mat_idx;
         for (auto sh: shapes) {
-            SPDLOG_DEBUG("Processing shape `{}'", sh.name);
+            spdlog::debug("Processing shape {}",sh.name);
             size_t index_offset = 0;
 
             for (size_t f = 0; f < sh.mesh.num_face_vertices.size(); f++) {
                 if (sh.mesh.material_ids[f] != mat_idx) {
-                    sub_mesh.end = fce;
+                    sub_mesh.end = index;
                     sub_mesh = emit_submesh(mesh, sub_mesh);
 
                     mat_idx = sh.mesh.material_ids[f];
@@ -96,21 +95,18 @@ namespace {
                 xe::sMesh::Face face;
                 for (size_t v = 0; v < fv; v++) {
                     mesh.vertex_coords.push_back(triangle.position[v]);
-                    if (!triangle.has_texcoord[v]) {
-                        if (mesh.has_texcoords[0]) {
+                    if (triangle.has_texcoord[v]) {
+                        if (!mesh.has_texcoords[0]) {
                             spdlog::warn("Some vertices have texcoord and some do not in OBJ file.");
-                            mesh.has_texcoords[0]=false;
+                            return 2;
                         }
-                    } else {
                         mesh.vertex_texcoords[0].push_back(triangle.tex_coord[v]);
                     }
-
-                    if (!triangle.has_normals[v]) {
-                        if (mesh.has_normals) {
+                    if (triangle.has_normals[v]) {
+                        if (!mesh.has_normals) {
                             spdlog::warn("Some vertices have normals and some do not in OBJ file.");
-                            mesh.has_normals=false;
+                            return 3;
                         }
-                    } else {
                         mesh.vertex_normals.push_back(triangle.normal[v]);
                     }
                     face.v[v] = index;
@@ -118,10 +114,9 @@ namespace {
                 }
                 mesh.faces.push_back(face);
                 index_offset += fv;
-                fce++;
             }
-            sub_mesh.end = fce;
-            sub_mesh = emit_submesh(mesh, sub_mesh);
+            sub_mesh.end = index;
+            sub_mesh=emit_submesh(mesh, sub_mesh);
 
         }
         return 0;
@@ -152,7 +147,7 @@ namespace {
 
 namespace xe {
     xe::sMesh load_smesh_from_obj(std::string name, std::string mtl_base_dir) {
-        SPDLOG_DEBUG("Loading obj file `{}'", name);
+        spdlog::debug("Loading obj file `{}'", name);
         xe::sMesh s_mesh;
 
         tinyobj::attrib_t attrib;
