@@ -1,0 +1,10 @@
+^C:\USERS\ADMINISTRATOR\3D\BUILD\_DEPS\GLFW-SUBBUILD\CMAKEFILES\FBCE21C4CD56DFF81B37AB7679A7223E\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Administrator/3d/build/_deps/glfw-subbuild -BC:/Users/Administrator/3d/build/_deps/glfw-subbuild --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Administrator/3d/build/_deps/glfw-subbuild/glfw-populate.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

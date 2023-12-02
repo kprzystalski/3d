@@ -1,0 +1,6 @@
+﻿  Building Custom Rule C:/Users/Administrator/3d/src/Application/CMakeLists.txt
+  application.cpp
+  utils.cpp
+  shader_source.cpp
+  Generowanie kodu...
+  application.vcxproj -> C:\Users\Administrator\3d\build\src\Application\Debug\application.lib

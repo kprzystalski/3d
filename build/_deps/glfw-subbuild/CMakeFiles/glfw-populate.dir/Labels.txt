@@ -1,0 +1,14 @@
+# Target labels
+ glfw-populate
+# Source files and their labels
+C:/Users/Administrator/3d/build/_deps/glfw-subbuild/CMakeFiles/glfw-populate
+C:/Users/Administrator/3d/build/_deps/glfw-subbuild/CMakeFiles/fbce21c4cd56dff81b37ab7679a7223e/glfw-populate.rule
+C:/Users/Administrator/3d/build/_deps/glfw-subbuild/CMakeFiles/74308a6eeb456a9453bc3d72fdb615c7/glfw-populate-complete.rule
+C:/Users/Administrator/3d/build/_deps/glfw-subbuild/CMakeFiles/ef49123d52e7838bb6f0a676af5a8108/glfw-populate-build.rule
+C:/Users/Administrator/3d/build/_deps/glfw-subbuild/CMakeFiles/ef49123d52e7838bb6f0a676af5a8108/glfw-populate-configure.rule
+C:/Users/Administrator/3d/build/_deps/glfw-subbuild/CMakeFiles/ef49123d52e7838bb6f0a676af5a8108/glfw-populate-download.rule
+C:/Users/Administrator/3d/build/_deps/glfw-subbuild/CMakeFiles/ef49123d52e7838bb6f0a676af5a8108/glfw-populate-install.rule
+C:/Users/Administrator/3d/build/_deps/glfw-subbuild/CMakeFiles/ef49123d52e7838bb6f0a676af5a8108/glfw-populate-mkdir.rule
+C:/Users/Administrator/3d/build/_deps/glfw-subbuild/CMakeFiles/ef49123d52e7838bb6f0a676af5a8108/glfw-populate-patch.rule
+C:/Users/Administrator/3d/build/_deps/glfw-subbuild/CMakeFiles/ef49123d52e7838bb6f0a676af5a8108/glfw-populate-test.rule
+C:/Users/Administrator/3d/build/_deps/glfw-subbuild/CMakeFiles/ef49123d52e7838bb6f0a676af5a8108/glfw-populate-update.rule

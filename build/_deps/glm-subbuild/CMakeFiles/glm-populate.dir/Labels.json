@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/Administrator/3d/build/_deps/glm-subbuild/CMakeFiles/glm-populate"
+		},
+		{
+			"file" : "C:/Users/Administrator/3d/build/_deps/glm-subbuild/CMakeFiles/4788d04163ff701d8fd58c57d697e4de/glm-populate.rule"
+		},
+		{
+			"file" : "C:/Users/Administrator/3d/build/_deps/glm-subbuild/CMakeFiles/43ce7aac92d8e6a5090ccc7244008958/glm-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/Administrator/3d/build/_deps/glm-subbuild/CMakeFiles/317f6d8db597e13b033ccc610d0a533a/glm-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/Administrator/3d/build/_deps/glm-subbuild/CMakeFiles/317f6d8db597e13b033ccc610d0a533a/glm-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/Administrator/3d/build/_deps/glm-subbuild/CMakeFiles/317f6d8db597e13b033ccc610d0a533a/glm-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/Administrator/3d/build/_deps/glm-subbuild/CMakeFiles/317f6d8db597e13b033ccc610d0a533a/glm-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/Administrator/3d/build/_deps/glm-subbuild/CMakeFiles/317f6d8db597e13b033ccc610d0a533a/glm-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/Administrator/3d/build/_deps/glm-subbuild/CMakeFiles/317f6d8db597e13b033ccc610d0a533a/glm-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/Administrator/3d/build/_deps/glm-subbuild/CMakeFiles/317f6d8db597e13b033ccc610d0a533a/glm-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/Administrator/3d/build/_deps/glm-subbuild/CMakeFiles/317f6d8db597e13b033ccc610d0a533a/glm-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"glm-populate"
+		],
+		"name" : "glm-populate"
+	}
+}

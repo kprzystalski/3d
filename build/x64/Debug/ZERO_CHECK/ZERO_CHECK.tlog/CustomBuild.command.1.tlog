@@ -1,0 +1,10 @@
+^C:\USERS\ADMINISTRATOR\3D\BUILD\CMAKEFILES\73F38BEBF2F7694EF9A9040313891975\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Administrator/3d -BC:/Users/Administrator/3d/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Administrator/3d/build/Graphics3DCode.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
